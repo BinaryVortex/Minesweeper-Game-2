@@ -1,0 +1,119 @@
+/* Add a new font family for a more legendary feel */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+body {
+    background: url('p.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;  /* Use Orbitron for a tech feel */
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Sleek container styling without glow */
+.game-container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(241, 231, 231, 0.9));
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 70vw;  /* Further reduce container width */
+    max-width: 350px;
+    box-shadow: none;  /* Removed the glow */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Title styling */
+.title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffab40;
+}
+
+/* Grid cells */
+#grid tr td {
+    width: 28px;  /* Slightly smaller cell size */
+    height: 28px;
+    background: linear-gradient(145deg, #333, #444);  /* Add a slight gradient */
+    border-radius: 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);  /* Add a 3D effect */
+}
+
+/* Change cell background when hovered */
+#grid tr td:hover {
+    background-color: #444;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);  /* Glow on hover */
+}
+
+/* Styling for cells with mines when clicked */
+#grid tr td.mine.clicked {
+    background-color: #d32f2f;  /* Red color for mines */
+    color: #fff;  /* Ensure the text is readable */
+}
+
+/* Glow effect for mines */
+#grid tr td.mine {
+    background-color: #d32f2f;
+    color: #fff;
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Animate the explosion of a mine */
+@keyframes shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    20%, 60% {
+        transform: translate(-5px, 5px);
+    }
+    40%, 80% {
+        transform: translate(5px, -5px);
+    }
+}
+
+/* Reset button with a hover glow effect */
+#reset-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: linear-gradient(145deg, #ff5722, #e64a19);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(255, 87, 34, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button glow effect on hover */
+#reset-button:hover {
+    background: linear-gradient(145deg, #ff7043, #e64a19);
+    box-shadow: 0px 0px 25px rgba(255, 87, 34, 1);
+}
+
+/* Status message styling */
+#status {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #ffd600;
+}
+
+/* Smooth transitions for game-over and success screens */
+@keyframes game-over {
+    0% { background-color: rgba(255, 0, 0, 0); }
+    100% { background-color: rgba(255, 0, 0, 0.5); }
+}
+
+@keyframes game-won {
+    0% { background-color: rgba(0, 255, 0, 0); }
+    100% { background-color: rgba(0, 255, 0, 0.5); }
+}
